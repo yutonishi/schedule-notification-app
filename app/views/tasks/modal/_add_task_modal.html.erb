@@ -1,0 +1,25 @@
+<div class="modal" id="add_task_modal">
+
+  <%= form_for @task, html: { class: "modal_form" } do |f| %>
+
+    <div>新規タスク追加</div>
+    
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title %>
+
+    <%= f.label :info, '説明文' %>
+    <%= f.text_area :info %>
+
+    <%= f.label :date, '開始時間' %>
+    <%= f.date_field :date %>
+
+    <%= f.label :start_time, '開始時間' %>
+    <%= f.time_field :start_time %>
+
+    <%= f.label :end_time, '終了時間' %>
+    <%= f.time_field :end_time %>
+
+    <button type="button" id="cancel_btn">キャンセル</button>
+    <button type="submit" id="add_task_modal_submit_btn">追加</button>
+  <% end %>
+</div>
