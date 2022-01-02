@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   # データベースへの保存を行うアクション
   def create
     @task = Task.new(task_params)
-    @task.user_id = current_user.id
+    @task.user_id = session[:user_id]
     @task.save
   end
 
@@ -23,6 +23,11 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+  end
+
+  def destroy
+    task = Task.find(params[:id])
+    task.destroy
   end
 
   private

@@ -8,5 +8,6 @@ $(".modal").on('click', function(event) {
   if (!$(event.target).closest('.modal_form').length) {
     $('#add_task_modal').hide();
     $('#edit_task_modal').hide();
+    $('#delete_task_modal').hide();
   }
 });
