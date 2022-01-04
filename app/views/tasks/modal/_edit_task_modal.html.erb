@@ -9,15 +9,6 @@
 
     <%= f.label :info, '説明文' %>
     <%= f.text_area :info, id: "edit_task_info" %>
-
-    <%= f.label :date, '開始時間' %>
-    <%= f.date_field :date, id: "edit_task_date" %>
-
-    <%= f.label :start_time, '開始時間' %>
-    <%= f.time_field :start_time, id: "edit_task_start_time" %>
-
-    <%= f.label :end_time, '終了時間' %>
-    <%= f.time_field :end_time, id: "edit_task_end_time" %>
     
     <button type="button" class="cancel_btn">キャンセル</button>
     <button type="submit" id="edit_task_modal_submit_btn">保存</button>
