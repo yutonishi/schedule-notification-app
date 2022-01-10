@@ -10,7 +10,13 @@
     <%= f.label :info, '説明文' %>
     <%= f.text_area :info %>
 
+    <%= f.label :start_time, '時間' %>
+    <%= f.date_field :start_time %>
+
+    <%= f.label :notification, '通知' %>
+    <%= f.check_box :notification %>
+
     <button type="button" id="cancel_btn">キャンセル</button>
-    <button type="submit" id="add_task_modal_submit_btn">追加</button>
+    <%= f.submit id: "add_task_modal_submit_btn" %>
   <% end %>
 </div>
