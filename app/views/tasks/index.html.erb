@@ -6,7 +6,7 @@
 </div>
 
 <div id="task_index">
-  <%= render 'tasks/partial/index', collection: @tasks %>
+  <%= render partial: "task", collection: @tasks %>
 </div>
 
 <br><br><br>
@@ -14,11 +14,11 @@
 <%= render 'tasks/modal/add_task_modal' %>
 <%= render 'tasks/modal/edit_task_modal' %>
 <%= render 'tasks/modal/delete_task_modal' %>
+<%= render 'tasks/add_task_modal_submit_btn' %>
+<%= render 'tasks/edit_task_modal_submit_btn' %>
+<%= render 'tasks/delete_task_modal_submit_btn' %>
 
 <%= javascript_pack_tag 'tasks/add_task_modal_btn' %>
-<%= javascript_pack_tag 'tasks/edit_task_modal_btn' %>
 <%= javascript_pack_tag 'tasks/delete_task_modal_btn' %>
-<%= javascript_pack_tag 'tasks/add_task_modal_submit_btn' %>
-<%= javascript_pack_tag 'tasks/edit_task_modal_submit_btn' %>
-<%= javascript_pack_tag 'tasks/delete_task_modal_submit_btn' %>
+<%= javascript_pack_tag 'tasks/edit_task_modal_btn' %>
 <%= javascript_pack_tag 'common/cancel_btn' %>
