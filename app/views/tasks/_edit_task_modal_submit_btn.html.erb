@@ -2,13 +2,19 @@
 
   $('#edit_task_modal_submit_btn').on('click', function(e){
     e.preventDefault();
-    var id = $(this).parent().parent().data("edit-task-id");
+    var id = $(this).parent().parent().attr("data-edit-task-id");
     var title = $(this).parent().find("#edit_task_title").val();
     var info = $(this).parent().find("#edit_task_info").val();
     var start_time = $(this).parent().find("#edit_task_start_time").val();
     var notification = $(this).parent().find("#edit_task_notification").val();
     var url = $(this).parent().attr("action");
     var closeModal = $(this).parent().parent();
+
+    console.log(id);
+    console.log(title);
+    console.log(info);
+    console.log(start_time);
+    console.log(notification);
 
     $.ajax({
       url: url + "/" + id,
@@ -28,7 +34,6 @@
     })
     .done( function(data) {
       closeModal.hide();
-      console.log(data);
       $("#task_index").html(data);
     })
     .fail( function() {
