@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_051127) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "notification", default: false, null: false
-    t.date "start_time"
+    t.datetime "start_time"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
