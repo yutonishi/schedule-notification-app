@@ -28,6 +28,7 @@
     .done( function(data) {
       closeModal.hide();
       $("#task_index").html(data);
+      console.log(data);
     })
     .fail( function() {
       alert('通信nに失敗しました');

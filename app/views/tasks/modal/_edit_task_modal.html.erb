@@ -1,22 +1,24 @@
 <div class="modal" id="edit_task_modal" data-edit-task-id="">
+  <form class="modal_form" action="/tasks">
+    <div>新規タスク追加</div>
 
-  <%= form_for @task, html: { class: "modal_form" } do |f| %>
+    <label for="task_title">タイトル</label>
+    <input type="text" name="task[title]" id="edit_task_title">
 
-    <div>タスク編集</div>
-    
-    <%= f.label :title, 'タイトル' %>
-    <%= f.text_field :title, id: "edit_task_title" %>
+    <label for="task_info">説明文</label>
+    <textarea name="task[info]" id="edit_task_info"></textarea>
 
-    <%= f.label :info, '説明文' %>
-    <%= f.text_area :info, id: "edit_task_info" %>
+    <label for="task_start_time">日</label>
+    <input type="text" name="task[start_time]" id="edit_task_start_time">
 
-    <%= f.label :start_time, '日' %>
-    <%= f.date_field :start_time, id: "edit_task_start_time" %>
-
-    <%= f.label :notification, '通知' %>
-    <%= f.check_box :notification, id: "edit_task_notification" %>
+    <label for="task_notification">通知</label>
+    <input type="checkbox" name="task[notification]" id="edit_task_notification">
 
     <button type="button" id="cancel_btn">キャンセル</button>
-    <%= f.submit id: "edit_task_modal_submit_btn" %>
-  <% end %>
+    <button type="submit" id="add_task_modal_submit_btn">作成</button>
+  </form>
 </div>
+
+<script>
+$("#edit_task_start_time").datepicker();
+</script>

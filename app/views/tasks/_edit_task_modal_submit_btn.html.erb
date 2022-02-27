@@ -10,12 +10,6 @@
     var url = $(this).parent().attr("action");
     var closeModal = $(this).parent().parent();
 
-    console.log(id);
-    console.log(title);
-    console.log(info);
-    console.log(start_time);
-    console.log(notification);
-
     $.ajax({
       url: url + "/" + id,
       type: 'PATCH',
