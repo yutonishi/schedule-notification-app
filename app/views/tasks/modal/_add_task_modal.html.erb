@@ -1,22 +1,70 @@
 <div class="modal" id="add_task_modal">
 
-  <%= form_for @task, html: { class: "modal_form" } do |f| %>
-
+  <form class="modal_form" id="new_task" action="/tasks">
     <div>新規タスク追加</div>
-    
-    <%= f.label :title, 'タイトル' %>
-    <%= f.text_field :title %>
 
-    <%= f.label :info, '説明文' %>
-    <%= f.text_area :info %>
+    <label for="task_title">タイトル</label>
+    <input type="text" name="task[title]" id="task_title">
 
-    <%= f.label :start_time, '日' %>
-    <%= f.date_field :start_time %>
+    <label for="task_info">説明文</label>
+    <textarea name="task[info]" id="task_info"></textarea>
 
-    <%= f.label :notification, '通知' %>
-    <%= f.check_box :notification %>
+    <label for="task_start_time">日</label>
+    <input type="text" name="task[start_time]" id="task_start_time">
+
+    <label for="task_notification">通知</label>
+    <input type="checkbox" name="task[notification]" id="task_notification">
 
     <button type="button" id="cancel_btn">キャンセル</button>
-    <%= f.submit id: "add_task_modal_submit_btn" %>
-  <% end %>
+    <button type="submit" id="add_task_modal_submit_btn">作成</button>
+  </form>
 </div>
+
+<script>
+$("#task_start_time").datepicker({
+  dateFormat: "yy/mm/dd",
+  prevText: "",
+  nextText: "",
+  monthNames: [
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月"
+  ],
+  monthNamesShort: [
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月"
+  ],
+  dayNames: [
+    "日曜日",
+    "月曜日",
+    "火曜日",
+    "水曜日",
+    "木曜日",
+    "金曜日",
+    "土曜日"
+  ],
+  dayNamesShort: ["日", "月", "火", "水", "木", "金", "土"],
+  dayNamesMin: ["日", "月", "火", "水", "木", "金", "土"],
+  showMonthAfterYear: true,
+  firstDay: 2
+});
+</script>

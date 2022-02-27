@@ -5,14 +5,9 @@
   タスクを追加
 </div>
 
-<%= month_calendar events: @tasks do |date, tasks| %>
-  <%= date %>
-
-  <div id="task_index">
-    <%= render partial: "task", collection: tasks %>
-  </div>
-
-<% end %>
+<div id="task_index">
+  <%= render 'task' %>
+</div>
 
 <br><br><br>
 
