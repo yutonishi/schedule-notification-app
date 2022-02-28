@@ -1,0 +1,19 @@
+.c-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 274px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: $pink-thick;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    & p {
+        font-size: 20px;
+        color: $white;
+        @include notosans;
+    }
+}
