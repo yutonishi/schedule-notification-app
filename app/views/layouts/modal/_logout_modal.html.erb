@@ -1,0 +1,18 @@
+<div class="c-modal" id="logout_modal">
+  <div class="c-modal_form">
+    <div class="c-modal_form_cover">
+      <div class="c-modal_form_cover_title">
+        <h3><i class="fa-solid fa-right-from-bracket"></i>ログアウト</h3>
+      </div>
+      <div class="c-modal_form_cover_text">本当にログアウトしますか？</div>
+      <div class="c-modal_form_cover_btn">
+        <button type="button" class="c-button cancel_btn">
+          <p>キャンセル</p>
+        </button>
+        <%= link_to destroy_user_session_path, method: :delete, class: "c-button" do %>
+          <p>ログアウト</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

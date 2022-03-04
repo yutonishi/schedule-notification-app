@@ -1,24 +1,87 @@
 <div class="c-modal" id="edit_task_modal" data-edit-task-id="">
   <form class="c-modal_form" action="/tasks">
-    <div>新規タスク追加</div>
+    <div class="c-modal_form_cover">
+      <div class="c-modal_form_cover_title">
+        <h3><i class="fa-solid fa-pencil"></i>新規タスク追加</h3>
+      </div>
 
-    <label for="task_title">タイトル</label>
-    <input type="text" name="task[title]" id="edit_task_title">
+      <div class="c-modal_form_cover_box">
+        <label for="task_title">タイトル</label>
+        <input type="text" name="task[title]" id="edit_task_title">
+      </div>
 
-    <label for="task_info">説明文</label>
-    <textarea name="task[info]" id="edit_task_info"></textarea>
+      <div class="c-modal_form_cover_box">
+        <label for="task_info">説明文</label>
+        <textarea name="task[info]" id="edit_task_info"></textarea>
+      </div>
 
-    <label for="task_start_time">日</label>
-    <input type="text" name="task[start_time]" id="edit_task_start_time">
+      <div class="c-modal_form_cover_box">
+        <label for="task_start_time">日</label>
+        <input type="text" name="task[start_time]" id="edit_task_start_time">
+      </div>
 
-    <label for="task_notification">通知</label>
-    <input type="checkbox" name="task[notification]" id="edit_task_notification">
+      <div class="c-modal_form_cover_box">
+        <label for="task_notification">通知</label>
+        <input type="checkbox" name="task[notification]" id="edit_task_notification">
+      </div>
 
-    <button type="button" class="cancel_btn">キャンセル</button>
-    <button type="submit" id="add_task_modal_submit_btn">作成</button>
+      <div class="c-modal_form_cover_btn">
+        <button type="button" class="c-button cancel_btn">
+          <p>キャンセル</p>
+        </button>
+        <button type="submit" class="c-button" id="add_task_modal_submit_btn">
+          <p>作成</p>
+        </button>
+      </div>
+    </div>
   </form>
 </div>
 
 <script>
-  $("#edit_task_start_time").datepicker();
+  $("#edit_task_start_time").datepicker({
+  dateFormat: "yy/mm/dd",
+  prevText: "",
+  nextText: "",
+  monthNames: [
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月"
+  ],
+  monthNamesShort: [
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月"
+  ],
+  dayNames: [
+    "日曜日",
+    "月曜日",
+    "火曜日",
+    "水曜日",
+    "木曜日",
+    "金曜日",
+    "土曜日"
+  ],
+  dayNamesShort: ["日", "月", "火", "水", "木", "金", "土"],
+  dayNamesMin: ["日", "月", "火", "水", "木", "金", "土"],
+  showMonthAfterYear: true,
+  firstDay: 2
+});
 </script>
