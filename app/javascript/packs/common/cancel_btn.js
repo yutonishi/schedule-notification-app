@@ -3,9 +3,9 @@ $(".cancel_btn").on("click", function() {
   closeModal.hide();
 })
 
-$(".modal").on('click', function(event) {
+$(".c-modal").on('click', function(event) {
   // 表示したポップアップ以外の部分をクリックしたとき
-  if (!$(event.target).closest('.modal_form').length) {
+  if (!$(event.target).closest('.c-modal_form').length) {
     $('#add_task_modal').hide();
     $('#edit_task_modal').hide();
     $('#delete_task_modal').hide();
