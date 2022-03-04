@@ -1,0 +1,23 @@
+<div class="l-sidebar">
+  <h1>MAiASA</h1>
+  <div class="l-sidebar_box">
+    <div class="l-sidebar_box_btn">
+      <div class="l-sidebar_box_btn_topic"><i class="fa-solid fa-book-open"></i>タスク一覧</div>
+      <div class="l-sidebar_box_btn_unity">
+        <div class="l-sidebar_box_btn_unity_list"><i class="fa-solid fa-circle-play"></i>カレンダー</div>
+        <div class="l-sidebar_box_btn_unity_list"><i class="fa-solid fa-circle-play"></i>リスト</div>
+      </div>
+    </div>
+  </div>
+  <div class="l-sidebar_bottom">
+    <div class="l-sidebar_bottom_topic"><i class="fa-solid fa-gear"></i>アカウント設定</div>
+    <% if user_signed_in? %>
+      <div class="c-button" id="logout_modal_btn">
+        <p>ログアウト</p>
+      </div>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path %>
+      <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
+  </div>
+</div>

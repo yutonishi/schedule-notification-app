@@ -14,18 +14,10 @@
   </head>
 
   <body>
-    <header style="margin-top: 50px">
-      <div>
-        <% if user_signed_in? %>
-          <div class="c-button" id="logout_modal_btn">
-            <p>ログアウト</p>
-          </div>
-        <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
-        <% end %>
-      </div>
+    <header>
     </header>
+    <%= render 'layouts/partial/sidebar' %>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
