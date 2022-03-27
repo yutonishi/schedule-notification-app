@@ -2,15 +2,14 @@
 
   $('#add_task_modal_submit_btn').on('click', function(e){
     e.preventDefault();
-    var title = $(this).parent().find("#task_title").val();
-    var info = $(this).parent().find("#task_info").val();
-    var start_time = $(this).parent().find("#task_start_time").val();
-    var notification = $(this).parent().find("#task_notification").val();
-    var url = $(this).parent().attr("action");
-    var closeModal = $(this).parent().parent();
+    var title = $("#task_title").val();
+    var info = $("#task_info").val();
+    var start_time = $("#task_start_time").val();
+    var notification = $("#task_notification").val();
+    var closeModal = $(this).parent().parent().parent().parent();
 
     $.ajax({
-      url: url,
+      url: '/tasks',
       type: 'POST',
       data: {
         task: {
@@ -31,7 +30,7 @@
       console.log(data);
     })
     .fail( function() {
-      alert('通信nに失敗しました');
+      alert('通信に失敗しました');
     })
   })
 

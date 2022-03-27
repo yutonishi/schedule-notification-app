@@ -14,9 +14,12 @@
   </head>
 
   <body>
-    <header>
-    </header>
-    <%= render 'layouts/partial/sidebar' %>
+    <% if controller.controller_name == 'sessions' || controller.controller_name == 'registrations' %>
+      <%= render 'devise/shared/background' %>
+    <% elsif %>
+      <%= render 'layouts/partial/sidebar' %>
+    <% end %>
+
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

@@ -1,0 +1,11 @@
+.c-title {
+    font-size: 24px;
+    font-weight: bold;
+    @include notosans;
+    color: $black;
+
+    & svg {
+        color: $pink-thick;
+        margin-right: 8px;
+    }
+}

@@ -16,4 +16,16 @@
         color: $white;
         @include notosans;
     }
+
+    & a {
+        font-size: 20px;
+        color: $white;
+        @include notosans;
+    }
+
+    & input {
+        font-size: 20px;
+        color: $white;
+        @include notosans;
+    }
 }

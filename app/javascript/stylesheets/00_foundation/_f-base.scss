@@ -45,12 +45,13 @@ html {
 }
 
 body {
+    display: flex;
+    justify-content: flex-start;
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
     width: 100%;
     min-width: 320px;
-    font-size: 62.5%;
     background-color: $white;
     color: $black;
 }
