@@ -10,13 +10,13 @@
     <textarea name="task[info]" id="task_info"></textarea>
 
     <label for="task_start_time">日</label>
-    <input type="text" name="task[start_time]" id="task_start_time">
+    <input type="text" name="task[start_time]" id="task_start_time"  autocomplete="off" readonly>
 
     <label for="task_notification">通知</label>
     <input type="checkbox" name="task[notification]" id="task_notification">
 
     <button type="button" id="cancel_btn">キャンセル</button>
-    <button type="submit" id="add_task_modal_submit_btn">作成</button>
+    <button type="button" id="add_task_modal_submit_btn">作成</button>
   </form>
 </div>
 
@@ -26,20 +26,6 @@ $("#task_start_time").datepicker({
   prevText: "",
   nextText: "",
   monthNames: [
-    "1月",
-    "2月",
-    "3月",
-    "4月",
-    "5月",
-    "6月",
-    "7月",
-    "8月",
-    "9月",
-    "10月",
-    "11月",
-    "12月"
-  ],
-  monthNamesShort: [
     "1月",
     "2月",
     "3月",
