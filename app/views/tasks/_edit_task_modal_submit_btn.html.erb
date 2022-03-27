@@ -9,6 +9,8 @@
     var notification = $("#edit_task_notification").val();
     var closeModal = $(this).parent().parent().parent().parent();
 
+    console.log(start_time);
+
     $.ajax({
       url: "/tasks/" + id,
       type: 'PATCH',
@@ -27,7 +29,7 @@
     })
     .done( function(data) {
       closeModal.hide();
-      $("#task_index").html(data);
+      $("#task_index").html(data);      
     })
     .fail( function() {
       alert('通信nに失敗しました');

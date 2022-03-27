@@ -14,11 +14,5 @@ $(document).on("click", ".edit_task_modal_btn", function(event) {
     $("#edit_task_modal").attr("data-edit-task-id", id);
 
     $("#edit_task_modal").show();
-
-    console.log(id);
-    console.log(title);
-    console.log(info);
-    console.log(start_time);
-    console.log(notification);
   }
 });

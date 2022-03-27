@@ -16,7 +16,7 @@
 
       <div class="c-input">
         <label for="task_start_time">日</label>
-        <input type="text" name="task[start_time]" id="task_start_time">
+        <input type="text" name="task[start_time]" id="task_start_time" autocomplete="off" readonly>
       </div>
 
       <div class="c-input">
@@ -28,7 +28,7 @@
         <button type="button" class="c-button cancel_btn">
           <p>キャンセル</p>
         </button>
-        <button type="submit" class="c-button" id="add_task_modal_submit_btn">
+        <button type="button" class="c-button" id="add_task_modal_submit_btn">
           <p>追加</p>
         </button>
       </div>
@@ -42,20 +42,6 @@ $("#task_start_time").datepicker({
   prevText: "",
   nextText: "",
   monthNames: [
-    "1月",
-    "2月",
-    "3月",
-    "4月",
-    "5月",
-    "6月",
-    "7月",
-    "8月",
-    "9月",
-    "10月",
-    "11月",
-    "12月"
-  ],
-  monthNamesShort: [
     "1月",
     "2月",
     "3月",

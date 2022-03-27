@@ -10,7 +10,6 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.user_id = current_user.id
     @task.save
     @tasks = Task.all
     render @task
@@ -18,7 +17,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
+    @task.update(task_params)    
     @tasks = Task.all
     render @task
   end
