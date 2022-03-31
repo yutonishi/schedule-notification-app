@@ -14,18 +14,20 @@
   </head>
 
   <body>
-    <header style="margin-top: 50px">
-      <div>
-        <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
-        <% end %>
-      </div>
-    </header>
+    <% if controller.controller_name == 'sessions' || controller.controller_name == 'registrations' %>
+      <%= render 'devise/shared/background' %>
+    <% elsif %>
+      <%= render 'layouts/partial/sidebar' %>
+    <% end %>
+
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+
+    <%= render 'layouts/modal/logout_modal' %>
+
+    <%= javascript_pack_tag 'common/logout_modal_btn' %>
+    <%= javascript_pack_tag 'common/cancel_btn' %>
   </body>
 </html>

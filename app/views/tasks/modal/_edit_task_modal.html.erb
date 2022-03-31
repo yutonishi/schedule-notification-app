@@ -1,26 +1,44 @@
-<div class="modal" id="edit_task_modal" data-edit-task-id="">
-  <form class="modal_form" action="/tasks">
-    <div>タスク編集</div>
+<div class="c-modal" id="edit_task_modal" data-edit-task-id="">
+  <form class="c-modal_form" action="/tasks">
+    <div class="c-modal_form_cover">
+      <div class="c-modal_form_cover_title">
+        <h3><i class="fa-solid fa-pencil"></i>タスク編集</h3>
+      </div>
 
-    <label for="task_title">タイトル</label>
-    <input type="text" name="task[title]" id="edit_task_title">
+      <div class="c-input c-modal_form_cover_box">
+        <label for="task_title">タイトル</label>
+        <input type="text" name="task[title]" id="edit_task_title">
+      </div>
 
-    <label for="task_info">説明文</label>
-    <textarea name="task[info]" id="edit_task_info"></textarea>
+      <div class="c-input c-modal_form_cover_box">
+        <label for="task_info">説明文</label>
+        <textarea name="task[info]" id="edit_task_info"></textarea>
+      </div>
 
-    <label for="task_start_time">日</label>
-    <input type="text" name="task[start_time]" id="edit_task_start_time">
+      <div class="c-input c-modal_form_cover_box">
+        <label for="task_start_time">日</label>
+        <input type="text" name="task[start_time]" id="edit_task_start_time">
+      </div>
 
-    <label for="task_notification">通知</label>
-    <input type="checkbox" name="task[notification]" id="edit_task_notification">
+      <div class="c-input c-modal_form_cover_box">
+        <label for="task_notification">通知</label>
+        <input type="checkbox" name="task[notification]" id="edit_task_notification">
+      </div>
 
-    <button type="button" id="cancel_btn">キャンセル</button>
-    <button type="button" id="edit_task_modal_submit_btn">更新</button>
+      <div class="c-modal_form_cover_btn">
+        <button type="button" class="c-button cancel_btn">
+          <p>キャンセル</p>
+        </button>
+        <button type="button" class="c-button" id="edit_task_modal_submit_btn">
+          <p>作成</p>
+        </button>
+      </div>
+    </div>
   </form>
 </div>
 
 <script>
-$("#edit_task_start_time").datepicker({
+  $("#edit_task_start_time").datepicker({
   dateFormat: "yy/mm/dd",
   prevText: "",
   nextText: "",

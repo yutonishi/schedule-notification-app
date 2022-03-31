@@ -4,7 +4,7 @@
     e.preventDefault();
     var id = $("#delete_task_modal").attr("data-delete-task-id");
     var url = "/tasks";
-    var closeModal = $(this).parent().parent();
+    var closeModal = $(this).parent().parent().parent().parent();
 
     $.ajax({
       url: url + "/" + id,

@@ -2,18 +2,17 @@
 
   $('#edit_task_modal_submit_btn').on('click', function(e){
     e.preventDefault();
-    var id = $(this).parent().parent().attr("data-edit-task-id");
+    var id = $(this).parent().parent().parent().parent().attr("data-edit-task-id");
     var title = $("#edit_task_title").val();
     var info = $("#edit_task_info").val();
     var start_time = $("#edit_task_start_time").val();
     var notification = $("#edit_task_notification").val();
-    var url = "/tasks";
-    var closeModal = $(this).parent().parent();
+    var closeModal = $(this).parent().parent().parent().parent();
 
     console.log(start_time);
 
     $.ajax({
-      url: url + "/" + id,
+      url: "/tasks/" + id,
       type: 'PATCH',
       data: {
         task: {
