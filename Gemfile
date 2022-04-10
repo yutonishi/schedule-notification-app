@@ -58,3 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'pry-rails'
 gem 'simple_calendar', '~> 2.0'
+gem 'dotenv-rails'
+gem 'line-bot-api'
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
