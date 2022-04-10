@@ -12,21 +12,21 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     @task.save
-    @tasks = Task.all
+    @tasks = Task.belong_user(current_user.id)
     render @task
   end
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)    
-    @tasks = Task.all
+    @task.update(task_params) 
+    @tasks = Task.belong_user(current_user.id)
     render @task
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    @tasks = Task.all
+    @tasks = Task.belong_user(current_user.id)
     render @task
   end
 
