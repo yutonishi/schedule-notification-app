@@ -11,13 +11,15 @@ class LinebotController < ApplicationController
     events = client.parse_events_from(body)
 
     events.each do |event|
+      userId = event['source']['userId']
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
+          userId = event['source']['userId']  #userId取得
           message = {
             type: 'text',
-            text: event.message['text']
+            text: 'あなたのユーザーIDは' + userId + 'です。'
           }
         end
       end
