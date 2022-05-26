@@ -1,0 +1,29 @@
+<div class="p-top">
+  <div class="p-top_cover">
+    <div class="p-top_cover_title">
+      <h2 class="c-title"><i class="fa-solid fa-book-open"></i>タスク一覧</h2>
+    </div>
+
+    <div class="p-top_cover_content">
+      <div class="p-top_cover_content_list"><i class="fa-solid fa-circle-play"></i>カレンダー</div>
+      <div class="c-button" id="add_task_modal_btn">
+        <p>新規タスク追加</p>
+      </div>
+      <div class="p-top_cover_content_tasks" id="task_index">
+        <%= render 'task' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= render 'tasks/modal/add_task_modal' %>
+<%= render 'tasks/modal/edit_task_modal' %>
+<%= render 'tasks/modal/delete_task_modal' %>
+<%= render 'tasks/add_task_modal_submit_btn' %>
+<%= render 'tasks/edit_task_modal_submit_btn' %>
+<%= render 'tasks/delete_task_modal_submit_btn' %>
+
+<%= javascript_pack_tag 'tasks/add_task_modal_btn' %>
+<%= javascript_pack_tag 'tasks/delete_task_modal_btn' %>
+<%= javascript_pack_tag 'tasks/edit_task_modal_btn' %>

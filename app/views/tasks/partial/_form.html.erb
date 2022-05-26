@@ -1,0 +1,22 @@
+<div class="modal" id="add_task_modal">
+  <div>新規タスク追加</div>
+
+  <%= form_for @task, remote: true do |f| %>
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title %>
+
+    <%= f.label :info, '説明文' %>
+    <%= f.text_area :info %>
+
+    <%= f.label :date, '開始時間' %>
+    <%= f.date_field :date %>
+
+    <%= f.label :start_time, '開始時間' %>
+    <%= f.time_field :start_time %>
+
+    <%= f.label :end_time, '終了時間' %>
+    <%= f.time_field :end_time %>
+
+ 
+  <% end %>
+</div>
