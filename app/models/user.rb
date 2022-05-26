@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[line]
   has_many :tasks, dependent: :destroy
 
+  scope :have_line_account, -> { where.not(uid: nil )}
+
   def social_profile(provider)
     social_profiles.select { |sp| sp.provider == provider.to_s }.first
   end

@@ -62,3 +62,4 @@ gem 'dotenv-rails'
 gem 'line-bot-api'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
+gem 'whenever', require: false

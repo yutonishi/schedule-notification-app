@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_04_30_141617) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "notification", default: false, null: false
-    t.datetime "start_time"
+    t.date "start_time"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
