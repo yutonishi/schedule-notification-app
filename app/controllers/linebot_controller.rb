@@ -3,6 +3,7 @@ class LinebotController < ApplicationController
   require 'line/bot'
 
   def callback
+    weeks = ['日', '月', '火', '水', '木', '金', '土']
     body = request.body.read
     signature = request.env['HTTP_X_LINE_SIGNATURE']
     unless client.validate_signature(body, signature)
@@ -13,12 +14,26 @@ class LinebotController < ApplicationController
     events.each do |event|
       case event
       when Line::Bot::Event::Message
-        case event.type
-        when Line::Bot::Event::MessageType::Text
-          message = {
-            type: 'text',
-            text: event.message['text']
-          }
+        case event['message']['text']
+        when "タスク一覧（今日）"
+          day = weeks[Time.now.wday]
+
+          userId = event['source']['userId']
+          user = User.find_by(uid: userId)
+          tasks = Task.where(user_id: user.id, start_time: Time.now.to_date)
+          
+          if tasks.present?
+            task_title_arr = tasks.pluck(:title)
+            message = {
+              type: 'text',
+              text: Time.now.to_date.strftime("%m/%d（#{day}）") + "\n\n" + task_title_arr.map{ |task_title| '・' + task_title }.join("\n")
+            }
+          else
+            message = {
+              type: 'text',
+              text: Time.now.to_date.strftime("%m/%d（#{day}）") + "\n\n" + 'タスクはありません'
+            }
+          end
         end
       end
       client.reply_message(event['replyToken'], message)
