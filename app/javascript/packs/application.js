@@ -10,6 +10,12 @@ import "channels"
 import "@fortawesome/fontawesome-free/js/all";
 require('jquery')
 
+import "javascripts/common/cancel_btn"
+import "javascripts/common/logout_modal_btn"
+import "javascripts/tasks/add_task_modal_btn"
+import "javascripts/tasks/delete_task_modal_btn"
+import "javascripts/tasks/edit_task_modal_btn"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
