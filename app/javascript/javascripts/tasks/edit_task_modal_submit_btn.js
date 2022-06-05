@@ -1,4 +1,4 @@
-$('#edit_task_modal_submit_btn').on('click', function(e){
+$(document).on("click","#edit_task_modal_submit_btn", function(e){
   e.preventDefault();
   var id = $(this).parent().parent().parent().parent().attr("data-edit-task-id");
   var title = $("#edit_task_title").val();

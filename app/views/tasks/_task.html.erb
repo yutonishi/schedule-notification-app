@@ -1,5 +1,5 @@
 <%= month_calendar events: @tasks do |date, tasks| %>
-  <%= date %>
+  <div class="date"><%= date.strftime("%e") %></div>
   <% tasks.each do |task| %>
     <div class="edit_task_modal_btn" 
           data-task-id="<%= task.id %>"
@@ -7,11 +7,10 @@
           data-task-info="<%= task.info %>"
           data-task-start_time="<%= task.start_time %>"
           data-task-notification="<%= task.notification %>" >
-      <div style="border: 2px solid gray">
-        <p><%= task.title %></p>
-        <p><%= task.info %></p>
-        <div class="delete_task_modal_btn">
-          削除
+      <div class="c-task">
+        <p class="c-task_title"><%= task.title %></p>
+        <div class="delete_task_modal_btn c-task_delete">
+          <i class="fa-solid fa-trash-can"></i>
         </div>
       </div>
     </div>

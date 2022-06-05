@@ -1,4 +1,4 @@
-$(document).on("click", "add_task_modal_submit_btn", function(e){
+$(document).on("click", "#add_task_modal_submit_btn", function(e){
   e.preventDefault();
   var title = $("#task_title").val();
   var info = $("#task_info").val();

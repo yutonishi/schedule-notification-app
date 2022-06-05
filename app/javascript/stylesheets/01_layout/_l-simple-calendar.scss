@@ -1,0 +1,108 @@
+.simple-calendar {
+  .calendar-heading {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 12px;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: $white;
+      cursor: pointer;
+      
+      svg {
+        font-size: 24px;
+        font-weight: bold;
+        color: $black;
+      }
+
+      &:hover {
+        background-color: $pink-thin;
+      }
+    }
+
+    span {
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 1;
+      color: $black;
+      margin: 0 24px;
+    }
+  }
+  .table {
+    thead {
+      tr {
+        th {
+          text-align: center;
+          vertical-align: bottom;
+          height: 24px;
+          padding: 0;
+          font-weight: normal;
+          border-bottom: none;
+        }
+      }
+    }
+    tbody {      
+      tr {
+        td {
+          border-top-color: $white;          
+        }
+      }      
+    }
+  }
+  .day {
+    text-align: left;
+    height: 160px;
+    max-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: $white;
+
+    .date {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      font-weight: lighter;
+      border-radius: 50%;   
+      margin: 0 auto 6px auto;
+    }
+  }
+
+  .today {
+    .date {
+      color: $white;
+      background-color: $pink-thick;
+    }
+  }
+
+  .prev-month {}
+  .next-month { }
+  .current-month {
+    .date {
+      font-weight: bold;      
+    }
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+  
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .has-events {}
+}

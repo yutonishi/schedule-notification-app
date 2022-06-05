@@ -1,4 +1,4 @@
-$('#delete_task_modal_submit_btn').on('click', function(e){
+$(document).on('click', '#delete_task_modal_submit_btn', function(e){
   e.preventDefault();
   var id = $("#delete_task_modal").attr("data-delete-task-id");
   var url = "/tasks";

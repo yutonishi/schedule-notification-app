@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :set_beginning_of_week
+
   def index
     @tasks = Task.belong_user(current_user.id)
     @task = Task.new
@@ -34,5 +36,9 @@ class TasksController < ApplicationController
 
     def task_params
       params.require(:task).permit(:title, :info, :start_time, :notification)
+    end
+
+    def set_beginning_of_week
+      Date.beginning_of_week = :sunday
     end
 end
