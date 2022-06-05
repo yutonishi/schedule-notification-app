@@ -14,6 +14,7 @@
 @import "../stylesheets/01_layout/l-devise";
 @import "../stylesheets/01_layout/l-header";
 @import "../stylesheets/01_layout/l-footer";
+@import "../stylesheets/01_layout/l-simple-calendar";
 
 // ---------------------------------
 //   import 02_component styles
@@ -25,6 +26,7 @@
 @import "../stylesheets/02_component/c-background";
 @import "../stylesheets/02_component/c-input";
 @import "../stylesheets/02_component/c-switch";
+@import "../stylesheets/02_component/c-task";
 
 
 // ---------------------------------
@@ -32,4 +34,3 @@
 // ---------------------------------
 
 @import "../stylesheets/03_project/p-top";
-

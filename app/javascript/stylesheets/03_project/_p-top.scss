@@ -26,6 +26,7 @@
       flex-direction: column;
       align-items: flex-start;
       width: calc(100% - 240px);
+      margin-bottom: 80px;
       
       &_list {
         @include notosans;

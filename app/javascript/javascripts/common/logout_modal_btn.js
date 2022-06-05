@@ -1,3 +1,5 @@
-$("#logout_modal_btn").on("click", function() {
-  $("#logout_modal").show();
+document.addEventListener("turbolinks:load", function() {
+  $("#logout_modal_btn").on("click", function() {
+    $("#logout_modal").show();
+  })
 })

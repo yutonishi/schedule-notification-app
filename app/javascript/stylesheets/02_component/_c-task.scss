@@ -1,0 +1,36 @@
+.c-task {
+    display: flex;
+    align-items: center;    
+    width: calc(100% - 6px);
+    height: 22px;
+    background-color: $pink-thick;
+    border-radius: 4px;
+
+    &_title {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0 auto 0 8px;
+        color: $white;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &_delete {
+        font-size: 14px;        
+        // margin: 0 8px;
+        margin: 0px 8px 0 0;
+        cursor: pointer;        
+
+        & svg {            
+            color: $white;
+            transition: .3s;
+        }
+
+        &:hover {
+            & svg {
+                filter: drop-shadow(0 0 4px $black);
+            }
+        }
+    }
+}
