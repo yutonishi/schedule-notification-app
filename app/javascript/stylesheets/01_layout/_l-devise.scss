@@ -1,49 +1,106 @@
 .l-devise {
   position: fixed;
   top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  right: 0;  
   width: 640px;
   height: 100%;
   background-color: $white;
+  overflow-y: scroll;
 
-  & h1 {
-    @include notosans;
-    font-size: 52px;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    color: $black;
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 48px;
-  }
-
-  &_form {
+  &_wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
+    width: 100%;
+    height: fit-content;
 
-    &_btn {
+    & h1 {
+      @include notosans;
+      font-size: 52px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      color: $black;
+      text-align: center;
+      margin-top: 80px;
+      margin-bottom: 32px;
+    }
+  
+    & h3 {
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      @include notosans;
+      font-size: 20px;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+      color: $black;
+      margin-bottom: 48px;
+  
+      &::before {      
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 6px;
+        background-color: $pink-thick;
+        border-radius: 2px;
+      }
+    }
+  
+    &_form {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
-      margin-top: 32px;
-
-      & .form_text {
-        margin-top: 16px;
-        margin-bottom: 40px;
-      }
-      
-      & a.c-button{
-        background-color: $white;
-        border: 2px solid $pink-thick;
-
-        & p {
-          color: $pink-thick;
+      width: 400px;
+  
+      &_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 56px;
+  
+        & .form_text {
+          margin-top: 8px;
+        }
+        
+        & a.c-button{
+          margin-top: 16px;
+          background-color: $white;
+          border: 2px solid $pink-thick;
+  
+          & p {
+            color: $pink-thick;
+          }
+        }
+  
+        & a.line_login_btn {
+          display: flex;
+          align-items: center;
+          height: 40px;
+          border-radius: 6px;
+          background-color: #06C755;
+          margin: 56px 0;
+          
+          &::before {
+            content: "";
+            display: inline-block;
+            background-image: url('/assets/line_88.png');
+            background-size: contain;
+            border-radius: 6px 0 0 6px;
+            width: 40px;
+            height: 40px;
+            color: $white;
+            border-right: 1px solid rgba(#000000, 0.08)
+          }
+  
+          & p {
+            font-size: 12px;          
+            padding: 0 30px;
+            color: $white;          
+          }
         }
       }
     }

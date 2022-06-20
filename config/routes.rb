@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :tasks
   resources :users
   post '/callback' => 'linebot#callback'
+  def after_update_path_for(resource)
+    new_user_session_path
+  end
 end

@@ -1,6 +1,5 @@
 document.addEventListener("turbolinks:load", function() {
-  $("#task_start_time,#edit_task_start_time").datepicker({
-    dateFormat: "yy/mm/dd",
+  $("#task_start_time,#edit_task_start_time").datepicker({    
     prevText: "",
     nextText: "",
     monthNames: [
@@ -28,9 +27,11 @@ document.addEventListener("turbolinks:load", function() {
     ],
     dayNamesShort: ["日", "月", "火", "水", "木", "金", "土"],
     dayNamesMin: ["日", "月", "火", "水", "木", "金", "土"],
+    showOtherMonths: true,
+    dateFormat: "yy/mm/dd",
     showMonthAfterYear: true,
-    firstDay: 2
+    firstDay: 2,
+    weekHeader: "週",
+    yearSuffix: "年"
   });
-  
-  console.log('読み込み成功');
 })
