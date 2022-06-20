@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_beginning_of_week
+  before_action :authenticate_user!
 
   def index
     @tasks = Task.belong_user(current_user.id)
