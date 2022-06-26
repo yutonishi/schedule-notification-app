@@ -5,6 +5,8 @@
     height: 22px;
     background-color: $pink-thick;
     border-radius: 4px;
+    margin-bottom: 4px;
+    cursor: pointer;
 
     &_title {
         font-size: 12px;
@@ -20,7 +22,7 @@
         font-size: 14px;        
         // margin: 0 8px;
         margin: 0px 8px 0 0;
-        cursor: pointer;        
+        cursor: pointer;
 
         & svg {            
             color: $white;
@@ -29,7 +31,7 @@
 
         &:hover {
             & svg {
-                filter: drop-shadow(0 0 4px $black);
+                color: red;
             }
         }
     }
