@@ -30,7 +30,7 @@ document.addEventListener("turbolinks:load", function() {
     showOtherMonths: true,
     dateFormat: "yy/mm/dd",
     showMonthAfterYear: true,
-    firstDay: 2,
+    firstDay: 0,
     weekHeader: "週",
     yearSuffix: "年"
   });
