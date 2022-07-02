@@ -14,14 +14,44 @@ class LinebotController < ApplicationController
     events.each do |event|
       case event
       when Line::Bot::Event::Message
+        userId = event['source']['userId']
+        user = User.find_by(uid: userId)        
         case event['message']['text']
         when "タスク一覧（今日）"
           day = weeks[Time.now.wday]
-
-          userId = event['source']['userId']
-          user = User.find_by(uid: userId)
           tasks = Task.where(user_id: user.id, start_time: Time.now.to_date)
-          
+          if tasks.present?
+            task_title_arr = tasks.pluck(:title)
+            message = {
+              type: 'text',
+              text: Time.now.to_date.strftime("%m/%d（#{day}）") + "\n\n" + task_title_arr.map{ |task_title| '・' + task_title }.join("\n")
+            }
+          else
+            message = {
+              type: 'text',
+              text: Time.now.to_date.strftime("%m/%d（#{day}）") + "\n\n" + 'タスクはありません'
+            }
+          end
+        end
+        when "タスク一覧（明日）"
+          day = weeks[Time.now.wday + 1]          
+          tasks = Task.where(user_id: user.id, start_time: Time.now.since(1.days).to_date)
+          if tasks.present?
+            task_title_arr = tasks.pluck(:title)
+            message = {
+              type: 'text',
+              text: Time.now.to_date.strftime("%m/%d（#{day}）") + "\n\n" + task_title_arr.map{ |task_title| '・' + task_title }.join("\n")
+            }
+          else
+            message = {
+              type: 'text',
+              text: Time.now.to_date.strftime("%m/%d（#{day}）") + "\n\n" + 'タスクはありません'
+            }
+          end
+        end
+        when "タスク一覧（明後日）"
+          day = weeks[Time.now.wday + 2]          
+          tasks = Task.where(user_id: user.id, start_time: Time.now.since(2.days).to_date)
           if tasks.present?
             task_title_arr = tasks.pluck(:title)
             message = {
